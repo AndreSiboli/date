@@ -29,7 +29,7 @@ export default function Home() {
     useEffect(() => {
         if (localStorage.getItem('saw') === '1') return;
         axios
-            .get('/api/hello')
+            .get('https://date-lac-zeta.vercel.app/api/hello')
             .then((res) => {
                 console.log(res);
                 localStorage.setItem('saw', '1');
@@ -92,7 +92,7 @@ export default function Home() {
         setCurrentImg(img7);
 
         await axios
-            .post('/api/hello', { response: 'sim' })
+            .post('https://date-lac-zeta.vercel.app/api/hello', { response: 'sim' })
             .then((res) => {
                 console.log(res);
             })
