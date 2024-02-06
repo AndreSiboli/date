@@ -1,0 +1,44 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+    min-height: 100dvh;
+    padding: 6.25em 2em;
+    width: 100%;
+
+    &_image {
+        max-width: 250px;
+        width: 100%;
+        aspect-ratio: 1/1;
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    &_text {
+        font-size: 1.25em;
+    }
+
+    &_buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5em;
+        width: 100%;
+    }
+
+    &_button {
+        height: fit-content;
+    }
+
+    &_err {
+        display: grid;
+        place-items: center;
+        background-color: #000;
+        color: #fff;
+        min-height: 100dvh;
+    }
+}

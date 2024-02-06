@@ -1,0 +1,16 @@
+.button {
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+    padding: 1em;
+    font-size: 1.2em;
+    width: fit-content;
+    height: 100%;
+
+    &.good {
+        background: #0f0;
+    }
+    &.bad {
+        background: #f00;
+    }
+}
