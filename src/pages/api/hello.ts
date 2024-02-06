@@ -19,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         },
     });
 
-    console.log(process.env.NEXT_EMAIL)
+    console.log(process.env.NEXT_EMAIL);
 
     if (req.method === 'POST') {
         const message = `

@@ -31,7 +31,7 @@ export default function Home() {
         axios
             .get('/api/hello')
             .then((res) => {
-                console.log(res);
+                console.log(res.data);
                 localStorage.setItem('saw', '1');
             })
             .catch((err) => console.log(err));
@@ -74,7 +74,7 @@ export default function Home() {
             axios
                 .post('/api/hello', { response: 'não' })
                 .then((res) => {
-                    console.log(res);
+                    console.log(res.data);
                 })
                 .catch((err) => console.log(err));
         }
@@ -94,7 +94,7 @@ export default function Home() {
         await axios
             .post('/api/hello', { response: 'sim' })
             .then((res) => {
-                console.log(res);
+                console.log(res.data);
             })
             .catch((err) => console.log(err));
 
