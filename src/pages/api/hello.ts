@@ -14,10 +14,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         port: 465,
         secure: true,
         auth: {
-            user: process.env.email,
-            pass: process.env.pass,
+            user: process.env.NEXT_EMAIL,
+            pass: process.env.NEXT_PASS,
         },
     });
+
+    console.log(process.env.NEXT_EMAIL)
 
     if (req.method === 'POST') {
         const message = `
@@ -26,8 +28,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     <p>${req.body.response}... ${req.body.response}... Isso mesmo que ouviu, a resposta foi <strong>${req.body.response}</strong></p>
     `;
         const config = {
-            from: process.env.email,
-            to: process.env.email2,
+            from: process.env.NEXT_EMAIL,
+            to: process.env.NEXT_EMAIL_RECEIVER,
             subject: 'A resposta foi...',
             html: message,
         };
@@ -50,8 +52,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         const message = `<p>Ela está vendo o site</p>
       `;
         const config = {
-            from: process.env.email,
-            to: process.env.email2,
+            from: process.env.NEXT_EMAIL,
+            to: process.env.NEXT_EMAIL_RECEIVER,
             subject: 'Ela está vendo o site',
             html: message,
         };
